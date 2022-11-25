@@ -38,11 +38,15 @@ func billOptions(b bill) {
 
 	switch option {
 	case "a":
-		fmt.Println("You chose a")
+		name, _ := getInput("Item name: ", reader)
+		price, _ := getInput("Item price: ", reader)
+
+		fmt.Println(name, price)
+	case "t":
+		tip, _ := getInput("Enter tip amount (N): ", reader)
+		fmt.Println(tip)
 	case "s":
 		fmt.Println("You chose s")
-	case "t":
-		fmt.Println("You chose t")
 	default:
 		fmt.Println("That was not a valid option")
 		
