@@ -41,10 +41,29 @@ func billOptions(b bill) {
 		name, _ := getInput("Item name: ", reader)
 		price, _ := getInput("Item price: ", reader)
 
-		fmt.Println(name, price)
+		p, err := strconnv.ParseFloat(price, 64)
+		if err != nil {
+			fmt.Println("The price must be a number")
+			billOptions(b)
+		}
+		b.addItem(name, p)
+
+		fmt.Println("Item added - " name, price)
 	case "t":
 		tip, _ := getInput("Enter tip amount (N): ", reader)
 		fmt.Println(tip)
+		
+		t, err := strconnv.ParseFloat(tip, 64)
+		if err != nil {
+			fmt.Println("The tip must be a number")
+			billOptions(b)
+		}
+		b.updateTip(t)
+
+		fmt.Println("Tip added - " tip)
+
+		billOptions(b)
+
 	case "s":
 		fmt.Println("You chose s")
 	default:
