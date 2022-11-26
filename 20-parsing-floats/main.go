@@ -42,14 +42,33 @@ func billOptions(b bill) {
 		name, _ := getInput("Item name: ", reader)
 		price, _ := getInput("Item price: ", reader)
 
+		// Convert user input (string) to float
+		p, err := strconv.ParseFloat(price, 64)
+		if err != nil {
+			fmt.Println("The price must be a number")
+			billOptions(b)
+		}
+		b.addItem(name, p)
+
 		fmt.Println("Item added - " name, price)
+		billOptions(b)
 
 	case "t":
 		tip, _ := getInput("Enter tip amount (N): ", reader)
 		fmt.Println(tip)
 		
+		t, err := strconv.ParseFloat(tip, 64)
+		if err != nil {
+			fmt.Println("The tip must be a number")
+			billOptions(b)
+		}
+		b.updateTip(t)
+
+		fmt.Println("Tip added - " tip)
+		billOptions(b)
+
 	case "s":
-		fmt.Println("You chose s ")
+		fmt.Println("You chose to save the bill ", b)
 	default:
 		fmt.Println("That was not a valid option")
 		
