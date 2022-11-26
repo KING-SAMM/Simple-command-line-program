@@ -68,7 +68,9 @@ func billOptions(b bill) {
 		billOptions(b)
 
 	case "s":
-		fmt.Println("You chose to save the bill ", b)
+		b.save()
+
+		fmt.Printf("Bill, '%v', saved successfully \n", b.name)
 	default:
 		fmt.Println("That was not a valid option")
 		

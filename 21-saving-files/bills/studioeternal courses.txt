@@ -1,0 +1,8 @@
+Course Breakdown: 
+golang:      ---- N205000 
+javascript:  ---- N120000 
+HTML:        ---- N30000 
+CSS:         ---- N40000 
+solidity:    ---- N234000 
+tip          ---- N1500.00 
+total        ---- N630500.00 
