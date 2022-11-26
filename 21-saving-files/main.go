@@ -70,7 +70,7 @@ func billOptions(b bill) {
 	case "s":
 		b.save()
 
-		fmt.Printf("Bill, '%v', saved successfully \n", b.name)
+		fmt.Printf("File, '%v', saved successfully \n", b.name)
 	default:
 		fmt.Println("That was not a valid option")
 		
