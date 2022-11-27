@@ -5,14 +5,20 @@ import (
 
 )
 
+const N = 100000
+
 func main() {
 	c := make(chan int)
 	in := c
-	out := make(chan int)
+	var out chan int
 
-	go worker(in, out)
-
-	in <- 0
+	for i := 0; i < N; i++ {
+		out = make(chan int)
+		go worker(in, out)
+		in = out
+	}
+	
+	c <- 0
 	fmt.Println(<-out)
 }
 
