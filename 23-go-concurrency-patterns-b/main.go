@@ -12,7 +12,7 @@ func main() {
 	var out chan int
 
 	for i := 0; i < N; i++ {
-		go worker(in, out)
+		out = worker(in)
 		in = out
 	}
 	
@@ -22,8 +22,10 @@ func main() {
 
 func worker(in <-chan int) <-chan int {
 	out := make(chan int)
-	v := <- in
-	out <- 1 + v
+	go func() {
+		v := <- in
+		out <- 1 + v
+	}()
 
 	return out
 }
