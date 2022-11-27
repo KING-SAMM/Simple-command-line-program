@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 )
 
 const N = 100000
