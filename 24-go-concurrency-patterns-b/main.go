@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-const N = 100000
+const N = 200000
 
 func main() {
 	c := make(chan int)
@@ -20,7 +20,7 @@ func main() {
 	fmt.Println(<-out)
 }
 
-func worker(in <-chan int) <-chan int {
+func worker(in chan int) chan int {
 	out := make(chan int)
 	go func() {
 		v := <- in
