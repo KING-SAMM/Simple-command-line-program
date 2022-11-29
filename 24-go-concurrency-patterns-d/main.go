@@ -1,3 +1,5 @@
+/**** Working With Wait Groups ****/
+
 package main
 import (
 	"fmt"
@@ -18,7 +20,7 @@ func main() {
 }
 
 func count(animal string) {
-	for i := 0; i <= 5; i++ {
+	for i := 1; i <= 5; i++ {
 		fmt.Println(i, animal)
 		time.Sleep(time.Millisecond * 500)
 	}
