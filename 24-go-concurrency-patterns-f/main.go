@@ -1,4 +1,4 @@
-// Send and receive through channels within the same goroutine using buffered channels 
+// Send and receive through channels within the same goroutine will NOT work 
 
 package main
 
@@ -12,5 +12,4 @@ func main() {
 
 	msg := <- c
 	fmt.Println(msg)
-
 }
