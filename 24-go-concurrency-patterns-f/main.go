@@ -1,4 +1,4 @@
-// Send and receive through channels within the same goroutine will NOT work 
+// Send and receive through a channel within the same goroutine will NOT work 
 
 package main
 
